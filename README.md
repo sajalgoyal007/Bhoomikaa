@@ -1,187 +1,138 @@
-# 🌾 **Bhoomika — Blockchain-Based Land Verification System**
+###🌾 **Bhoomika — A Blockchain-Based Land Verification System**
 
-*A secure, transparent & tamper-proof digital solution for land ownership verification in India.*
+**Bhoomika** is a decentralized land registry platform built on the **Aptos Blockchain** to bring transparency, security, and trust to land ownership and verification processes. The system eliminates manual manipulation, delays, and corruption commonly found in traditional land record systems by introducing immutable blockchain-backed verification.
 
----
-
-## 📌 **Project Overview**
-
-**Bhoomika** ek **blockchain-powered land registry & verification platform** hai jo India me hone wale land disputes, fake documents aur illegal transfers jaise problems ko solve karta hai.
-
-Traditional land systems me:
-
-* Records easily manipulate ho jaate hain
-* Approvals traceable nahi hote
-* Ownership disputes ka solution opaque hota hai
-
-⚡ **Bhoomika in sab problems ko blockchain ke through permanently solve karta hai.**
-
-## 🧠 **Problem Statement**
-
-India me sabse zyada legal disputes **land ownership** ko lekar hote hain —
-chahe wo:
-
-* Ancestral land ho
-* Family disputes ho
-* Fake registry cases ho
-
-Ek baar galat record register ho jaaye to:
-
-* Use reverse karna mushkil hota hai
-* Verification transparent nahi hoti
-* Single bad actor poora system manipulate kar sakta hai
-
-✅ **Bhoomika is sabko permanently fix karta hai — using blockchain.**
+Land is one of the most valuable assets in any country, yet land ownership disputes, document forgery, and record tampering remain major challenges. Bhoomika addresses these issues by ensuring that every land record is cryptographically secured and publicly verifiable.
 
 ---
 
-## 🏗 **How Bhoomika Works**
+## 📘 **Problem Statement**
 
-### 🧍‍♂️ Citizen Flow (User Side)
+Traditional land registry systems suffer from:
 
-1. User login karta hai
-2. Land details add karta hai:
+* Manual and paper-based record keeping
+* High risk of document forgery
+* Lack of transparency in ownership transfer
+* Corruption during approvals
+* Long verification timelines
+* Frequent legal disputes due to record manipulation
 
-   * District
-   * Tehsil
-   * Village
-   * Area
-   * Khasra Number
-3. Documents upload karta hai (PDF / Image / IPFS CID)
-4. Land blockchain par submit hoti hai
-5. Status **Pending** dikhta hai jab tak council approval na de
+These problems lead to financial losses, legal conflicts, and lack of public trust in land administration systems.
 
 ---
 
-### 🧑‍💼 Council Flow (Authority Side)
+## 💡 **Proposed Solution**
 
-1. Council member login karta hai
-2. Pending land requests dekhta hai
-3. Land ko:
+Bhoomika introduces a **blockchain-powered digital land registry system** where:
 
-   * ✅ Approve
-   * ❌ Reject
-   * ⚠️ Dispute
-4. Decision instantly user ko reflect hota hai
-5. Final decision **blockchain par permanently store** hota hai
-
----
-
-### 🌍 **Map Integration**
-
-Har land record ke saath:
-
-* ✅ **"View on Map"** option hota hai
-* OpenStreetMap ke through:
-
-  * Village
-  * Tehsil
-  * Approximate land location
+* Land records are stored **on-chain**, making them **tamper-proof**
+* Every approval, rejection, and dispute is **immutably recorded**
+* Ownership remains **transparent and verifiable**
+* Documents are stored on **IPFS** for secure decentralized access
+* Land location is tracked via **live map integration**
+* Role-based authentication ensures **secure access for Citizens and Councils**
 
 ---
 
-## 🛠 **Technology Stack**
+## 🧠 **Technology Overview**
 
-### 🎨 Frontend
+Bhoomika follows a **Web3 architecture** consisting of:
 
-* **React (Vite)**
-* **TypeScript**
-* **ShadCN/UI**
-* **Tailwind CSS**
-
-### ⛓ Blockchain / Backend
-
-* **Move Smart Contracts**
-* **Aptos Blockchain**
-* **Aptos SDK**
-* **Petra Wallet Integration**
-* ❌ No Traditional Backend
-* ✅ **Blockchain = Backend**
-
-### 💾 Storage
-
-* **LocalStorage** (Temporary demo DB)
-* **IPFS-based Document CIDs**
+* **Frontend:** React + TypeScript + TailwindCSS
+* **Blockchain Layer:** Aptos Blockchain using **Move Smart Contracts**
+* **Wallet:** Petra Wallet for transaction signing
+* **Storage:** IPFS for document storage
+* **Mapping:** Google Maps / OpenStreetMap integration
 
 ---
 
-## 📦 **Key Features**
+## 🚀 **Why Aptos Blockchain**
 
-### ✅ Citizen Features
+Aptos was selected as the underlying blockchain due to its:
 
-* Add & manage land records
-* Upload documents or IPFS CID
-* View approval status in real-time
-* Raise disputes
-* Map location preview
-* Hindi + English language support
-
----
-
-### 🧑‍💼 Council Features
-
-* Dashboard for:
-
-  * Pending
-  * Approved
-  * Rejected lands
-* Approve / Reject / Dispute actions
-* On-chain verification
-* Status syncing with blockchain
+* High transaction throughput
+* Very low gas fees
+* Strong security through the Move programming language
+* Instant transaction finality
+* Suitability for large-scale public governance systems
 
 ---
 
-## 🚀 **Why We Chose Aptos**
+## 👥 **System Roles**
 
-* ⚡ Ultra-fast transactions (1–2 sec finality)
-* 💸 Very low gas fees
-* 🔐 Secure **Move language**
-* 🔄 Parallel transaction execution
-* ✅ Best for governance & public record systems
+### 🔹 Citizen (User)
 
----
+Citizens can submit land records, upload verification documents, view ownership status, and track approval progress transparently.
 
-## ⚙️ **System Requirements**
+### 🔸 Council (Authority)
 
-Make sure you have:
-
-* ✅ Node.js 18+
-* ✅ Petra Wallet Browser Extension
+Council members authenticate securely and verify submitted land claims by approving, rejecting, or disputing requests.
 
 ---
 
-## 📄 **Smart Contract Overview**
+## ⚙️ **Smart Contract Capabilities**
 
-Move smart contracts handle:
+The Move smart contracts handle the core logic of:
 
-* `submit_land`
-* `approve`
-* `reject`
-* `dispute`
-* `transfer_ownership` *(future scope)*
+* Land submission
+* Approval by council
+* Rejection handling
+* Dispute registration
+* Ownership transfer (future upgrade)
 
-📁 Contracts stored in:
-
-```
-/contracts
-```
+All transactions are immutably stored on the Aptos chain.
 
 ---
 
-## 📢 **Future Scope**
+## 🔐 **Security & Trust Layer**
 
-* GPS-based land verification
-* Aadhaar-linked digital signatures
-* Multi-council multi-signature approvals
-* NFT-based land ownership certificates
-* Full on-chain legal dispute workflow
+* Blockchain ensures immutability
+* Wallet-based identity prevents impersonation
+* IPFS ensures content integrity
+* Role-based access control secures interfaces
+* On-chain verification prevents backdated record modifications
 
 ---
 
-## ✅ **Project Status**
+## 📢 **Future Scope & Expansion**
 
-* ✅ Fully working frontend
-* ✅ Blockchain integration complete
-* ✅ Wallet login functional
-* ✅ On-chain land submission & approval working
-* ✅ Map integration successful
+Bhoomika can be expanded to include:
+
+* GPS-based automated land boundary verification
+* Aadhaar-linked digital identity verification
+* Multi-authority approvals using multisig
+* NFT-based ownership certificates
+* Integrated legal dispute resolution mechanism
+* Mobile-first citizen access
+
+---
+
+## ✅ **Current System Status**
+
+The current implementation successfully demonstrates:
+
+* Fully functional Web3 frontend
+* Live blockchain-based land submission
+* Council approval & dispute workflow
+* Wallet connectivity
+* IPFS document preview
+* Real-time status synchronization
+
+---
+
+## 🏆 **Use Cases & Applications**
+
+* Government land registry systems
+* Smart city infrastructure
+* Rural land digitization
+* Anti-fraud property verification
+* Land ownership dispute reduction
+
+---
+
+## 👨‍💻 **Developer**
+
+**Sajal Goyal**
+
+Blockchain & Full Stack Developer
+Building transparent public infrastructure with Web3 🚀
