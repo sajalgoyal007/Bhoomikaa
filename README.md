@@ -1,4 +1,4 @@
-###🌾 **Bhoomika — A Blockchain-Based Land Verification System**
+# 🌾 **Bhoomika — Blockchain-Based Land Verification System** 
 
 **Bhoomika** is a decentralized land registry platform built on the **Aptos Blockchain** to bring transparency, security, and trust to land ownership and verification processes. The system eliminates manual manipulation, delays, and corruption commonly found in traditional land record systems by introducing immutable blockchain-backed verification.
 
