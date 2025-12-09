@@ -9,7 +9,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ParcelProvider } from "@/contexts/ParcelContext";
 import LoginUserPage from "./pages/LoginUserPage";
 import LoginCouncilPage from "./pages/LoginCouncilPage";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import LandingPage from "@/pages/LandingPage";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Header } from "@/components/Header";
@@ -37,42 +37,42 @@ const App = () => (
               <Header />
               <Routes>
                 <Route
-  path="/search"
-  element={
-    <ProtectedRoute role="user">
-      <SearchPage />
-    </ProtectedRoute>
-  }
-/>
+                  path="/search"
+                  element={
+                    <ProtectedRoute role="user">
+                      <SearchPage />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/results" element={<ResultsPage />} />
                 <Route path="/parcel/:id" element={<ParcelDetailPage />} />
                 <Route
-  path="/add-land"
-  element={
-    <ProtectedRoute role="user">
-      <AddLandPage />
-    </ProtectedRoute>
-  }
-/>
+                  path="/add-land"
+                  element={
+                    <ProtectedRoute role="user">
+                      <AddLandPage />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route path="/my-lands" element={<MyLandsPage />} />
                 <Route
-  path="/council"
-  element={
-    <ProtectedRoute role="council">
-      <CouncilPage />
-    </ProtectedRoute>
-  }
-/>
+                  path="/council"
+                  element={
+                    <ProtectedRoute role="council">
+                      <CouncilPage />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route path="/about" element={<AboutPage />} />
                 <Route
-  path="/contact"
-  element={
-    <ProtectedRoute role="user">
-      <ContactPage />
-    </ProtectedRoute>
-  }
-/>
+                  path="/contact"
+                  element={
+                    <ProtectedRoute role="user">
+                      <ContactPage />
+                    </ProtectedRoute>
+                  }
+                />
 
                 {/* Login routes */}
                 <Route path="/login" element={<LoginUserPage />} />

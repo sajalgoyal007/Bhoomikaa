@@ -1,16 +1,18 @@
 // src/pages/CouncilPage.tsx
+
 import { Eye, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { StatusBadge } from "@/components/StatusBadge";
 import { useParcel } from "@/contexts/ParcelContext";
 import { useToast } from "@/hooks/use-toast";
 import { useContract } from "@/hooks/useContract";
 import { useLanguage } from "@/contexts/LanguageContext";
-
+import { useNavigate } from "react-router-dom";
 
 const CouncilPage = () => {
+  const navigate = useNavigate(); // ✅ FIX 1: AB SAHI JAGAH PE HAI
+
   const { parcels, councilMembers, approveParcel, rejectParcel, disputeParcel } = useParcel();
   const { toast } = useToast();
   const { t } = useLanguage();
@@ -62,7 +64,9 @@ const CouncilPage = () => {
   return (
     <div className="min-h-screen tribal-pattern">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-primary mb-6">🧑‍💼 {t("council.dashboard")} Dashboard</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+          🧑‍💼 {t("council.dashboard")} Dashboard
+        </h1>
 
         {/* SUMMARY GRID */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
@@ -130,12 +134,12 @@ const CouncilPage = () => {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>{t("Parcel")} #</TableHead>
-                    <TableHead>{t("Khasra")} </TableHead>
-                    <TableHead>{t("Owner")} </TableHead>
-                    <TableHead>{t("Location")} </TableHead>
-                    <TableHead>{t("Date.submitted")} </TableHead>
-                    <TableHead>{t("Actions")} </TableHead>
+                    <TableHead>Parcel #</TableHead>
+                    <TableHead>Khasra</TableHead>
+                    <TableHead>Owner</TableHead>
+                    <TableHead>Location</TableHead>
+                    <TableHead>Date submitted</TableHead>
+                    <TableHead>Actions</TableHead>
                   </TableRow>
                 </TableHeader>
 
@@ -150,7 +154,14 @@ const CouncilPage = () => {
 
                       <TableCell>
                         <div className="flex gap-1">
-                          <Button variant="outline" size="sm">
+
+                          {/* ✅ ✅ ✅ FIXED VIEW BUTTON */}
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            aria-label="View parcel"
+                            onClick={() => navigate(`/parcel/${parcel.id}`)}
+                          >
                             <Eye className="w-4 h-4" />
                           </Button>
 
@@ -165,6 +176,7 @@ const CouncilPage = () => {
                           <Button variant="secondary" size="sm" onClick={() => handleDispute(parcel.id)}>
                             <AlertTriangle className="w-4 h-4" />
                           </Button>
+
                         </div>
                       </TableCell>
                     </TableRow>

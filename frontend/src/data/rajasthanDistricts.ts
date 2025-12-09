@@ -1,0 +1,17 @@
+export const rajasthanDistricts: Record<string, string[]> = {
+  Jaipur: ["Jaipur", "Amer", "Bassi", "Chomu"],
+  Jodhpur: ["Jodhpur", "Osian", "Phalodi", "Bilara"],
+  Udaipur: ["Udaipur", "Girwa", "Kotra", "Salumbar"],
+  Kota: ["Kota", "Ramganj Mandi", "Sangod", "Digod"],
+  Ajmer: ["Ajmer", "Kishangarh", "Beawar", "Nasirabad"],
+  Alwar: ["Alwar", "Behror", "Tijara", "Rajgarh"],
+  Bikaner: ["Bikaner", "Kolayat", "Nokha", "Lunkaransar"],
+  Bharatpur: ["Bharatpur", "Deeg", "Kumher", "Nadbai"],
+  Bhilwara: ["Bhilwara", "Asind", "Banera", "Mandalgarh"],
+  Chittorgarh: ["Chittorgarh", "Nimbahera", "Begun", "Kapasan"],
+  Sikar: ["Sikar", "Fatehpur", "Laxmangarh", "Danta"],
+  SriGanganagar: ["Ganganagar", "Raisinghnagar", "Suratgarh"],
+  Hanumangarh: ["Hanumangarh", "Nohar", "Bhadra"],
+  Pali: ["Pali", "Sojat", "Bali", "Jaitaran"],
+  Nagaur: ["Nagaur", "Merta", "Ladnun", "Didwana"],
+};
