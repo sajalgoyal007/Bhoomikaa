@@ -11,7 +11,8 @@ const LandingPage = () => {
 
   const loginAsCouncil = () => {
     localStorage.setItem("role", "council");
-    navigate("/council");
+    navigate("/login-council");
+
   };
 
   return (

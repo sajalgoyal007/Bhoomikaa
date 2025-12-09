@@ -38,14 +38,23 @@ export const Header = () => {
           <Link to="/" className="flex items-center gap-3">
             <div className="text-4xl">🏛️</div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-primary">{t("app.title")}</h1>
-              <p className="text-sm text-muted-foreground hidden md:block">{t("app.tagline")}</p>
+              <h1 className="text-2xl md:text-3xl font-bold text-primary">
+                {t("app.title")}
+              </h1>
+              <p className="text-sm text-muted-foreground hidden md:block">
+                {t("app.tagline")}
+              </p>
             </div>
           </Link>
 
           <div className="flex items-center gap-3">
             {/* Language */}
-            <Button variant="outline" size="sm" onClick={toggleLanguage} className="gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={toggleLanguage}
+              className="gap-2"
+            >
               <Globe className="w-4 h-4" />
               {language === "en" ? "हिंदी" : "English"}
             </Button>
@@ -63,7 +72,11 @@ export const Header = () => {
 
             {/* Login Buttons Removed — Now Uses Role System */}
             {!role && (
-              <Button variant="secondary" size="sm" onClick={() => navigate("/")}>
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={() => navigate("/")}
+              >
                 🔐 Login
               </Button>
             )}
@@ -83,29 +96,43 @@ export const Header = () => {
           {role === "user" && (
             <>
               <Link to="/search">
-                <Button variant="ghost" size="sm" className="gap-2">🔍 {t("nav.search")}</Button>
+                <Button variant="ghost" size="sm" className="gap-2">
+                  🔍 {t("nav.search")}
+                </Button>
               </Link>
 
               <Link to="/add-land">
-                <Button variant="ghost" size="sm" className="gap-2">➕ {t("nav.addLand")}</Button>
+                <Button variant="ghost" size="sm" className="gap-2">
+                  ➕ {t("nav.addLand")}
+                </Button>
               </Link>
 
               <Link to="/contact">
-                <Button variant="ghost" size="sm" className="gap-2">📞 {t("nav.contact")}</Button>
+                <Button variant="ghost" size="sm" className="gap-2">
+                  📞 {t("nav.contact")}
+                </Button>
               </Link>
             </>
           )}
 
           {/* Council Routes */}
+          {/* Council Routes */}
           {role === "council" && (
-            <Link to="/council">
-              <Button variant="ghost" size="sm" className="gap-2">🧑‍💼 {t("nav.council")}</Button>
-            </Link>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-2"
+              onClick={() => navigate("/login-council")} // ✅ ALWAYS go via login
+            >
+              🧑‍💼 {t("nav.council")}
+            </Button>
           )}
 
           {/* Always visible */}
           <Link to="/about">
-            <Button variant="ghost" size="sm" className="gap-2">ℹ️ {t("nav.about")}</Button>
+            <Button variant="ghost" size="sm" className="gap-2">
+              ℹ️ {t("nav.about")}
+            </Button>
           </Link>
         </nav>
       </div>
